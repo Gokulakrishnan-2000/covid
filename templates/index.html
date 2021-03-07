@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid 19 Predictor</title>
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <link href="{{ url_for('static', filename='css/index.css') }}"  rel="stylesheet">
+  <script src="{{url_for('static', filename='js/index.js')}}"></script>
+  <style>
+    .head{
+      margin: 10px auto 10px auto;
+    }
+    .subh{
+      margin: 5px auto 40px auto;
+      color:rgb(63, 58, 58);
+    }
+    @media only screen and (max-width: 479px){
+    .file-upload { width: 90%; }
+}
+  </style> 
+</head>
+
+
+<body>
+  <div class="container">
+    <center><h1 class="head" >Corona Virus Prediction using TensorFlow Deeplearning ML Model</h1></center>
+    <center><h3 class="subh">Please Upload the Chest X-ray Image</h3></center>
+    
+<div class="file-upload">
+  <form method="POST" action="/upload-image" enctype="multipart/form-data">
+    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Upload</button>
+
+  <div class="image-upload-wrap">
+    <input class="file-upload-input" name="image" type='file' onchange="readURL(this);" accept="image/*" />
+    <div class="drag-text">
+      <h3>Drag and drop a Image or Upload Image</h3>
+    </div>
+  </div>
+  <div class="file-upload-content">
+    <img class="file-upload-image" src="#" alt="your image" />
+    <div class="image-title-wrap">
+      <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+    </div>
+  </div>
+  <div>
+    <input class="file-upload-btn pred" type="submit" value="predict"/>
+  </div>
+
+  </form>  
+  
+</div>
+</div>
+    
+</body>
+
+</html>
