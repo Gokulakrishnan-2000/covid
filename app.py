@@ -52,5 +52,3 @@ def upload_image():
     
 if __name__ == "__main__":
     app.run(debug=True)
-
-# https://fluvid.com/videos/detail/z71vZUqXR1FgX3wjB
