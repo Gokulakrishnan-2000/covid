@@ -38,6 +38,8 @@ body {
     color: #ffffff;
     transition: all .2s ease;
     cursor: pointer;
+
+
   }
 
   .pred:hover {
@@ -80,9 +82,13 @@ body {
   }
   
   .image-dropping,
-  .image-upload-wrap:hover {
+  .image-upload-wrap:hover,
+  .image-upload-wrap h3:hover {
     background-color: #1FB264;
     border: 4px dashed #ffffff;
+    text-decoration: white;
+    text-decoration-color:white ;
+    color: white;
   }
   
   .image-title-wrap {
@@ -99,7 +105,14 @@ body {
   .drag-text h3 {
     font-weight: 100;
     text-transform: uppercase;
-    color: #15824B;
+    color: black;
+    padding: 60px 0;
+  }
+
+  .drag-text h3:hover {
+    font-weight: 100;
+    text-transform: uppercase;
+    color: white;
     padding: 60px 0;
   }
   

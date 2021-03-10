@@ -68,8 +68,11 @@
 		<div class="container-login100">
 			<div class="wrap-login100 cont">
 				<img src="{{img_path}}" alt="img" width="500" height="500" class="img-thumbnail d-img" />
-				<h5 class="label">Prediction: <span class="res">{{label}}</span> </h5>
-				
+				{% if label == "Corona" %}
+					<h5 class="label">Prediction: <span class="res" style="color: red;">{{label}}</span> </h5>
+				{% else %}
+					<h5 class="label">Prediction: <span class="res" style="color: green;">{{label}}</span> </h5>
+				{% endif %}
 				<div class="link">
 					<a href="/">Try Again</a>
 				</div>
