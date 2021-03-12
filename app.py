@@ -37,15 +37,22 @@ def upload_image():
         x = np.expand_dims(x, axis=0)
         img_data = preprocess_input(x)
         classes = model.predict(img_data)
+        print("Classes:::::: ",classes)
         New_pred = np.argmax(classes, axis=1)
+        print("New-pred:::::: ",New_pred)
+        
         if New_pred==[1]:
             print('Prediction: Normal')
             label = "Normal"
+            print("Prediction accuracy:::: ",str(classes[0][1]*100))
+            conf = str(classes[0][1]*100)[:5]
         else:
             print('Prediction: Corona')
             label = "Corona"
+            print("Prediction accuracy:::: ",str(classes[0][0]*100))
+            conf = str(classes[0][0]*100)[:5]
 
-        return render_template("result.html",label=label,img_path=img_path)
+        return render_template("result.html",label=label,img_path=img_path,conf=conf)
 
 
 
